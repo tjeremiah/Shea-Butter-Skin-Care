@@ -19,6 +19,20 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // //matches all routes to /api
 // app.use('/api', require('./apiRoutes'));
 
+app.get('/', (req, res) => {
+    res.send(`
+      <html>
+       <head>
+         <title>Puppies and Kittens</title>
+       </head>
+       <body>
+         <h1>Puppies and Kittens Galore</h1>
+       </body>
+      </html>
+    `)
+  });
+
+  
 //send index.html for any other request
 app.use('*', function (req, res) {
     res.sendFile(path.join(__dirname, '../public'))
@@ -31,7 +45,7 @@ app.use(function(err, req, res, next) {
     res.status(err.status || 500).send(err.message || 'Internal server error.');
 });
 
-const port = process.env.PORT || 3000 //// this can be very useful if you deploy to Heroku!
+const port = process.env.PORT || 1337 //// this can be very useful if you deploy to Heroku!
 app.listen(port, function () {
     console.log(`your server is listening on ${port}`)
 });
