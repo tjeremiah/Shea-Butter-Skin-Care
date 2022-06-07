@@ -17,7 +17,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // //matches all routes to /api
-// app.use('/api', require('./apiRoutes'));
+app.use('/api', require('./apiRoutes'));
 
 app.get('/', (req, res) => {
     res.send(`
@@ -45,7 +45,7 @@ app.use(function(err, req, res, next) {
     res.status(err.status || 500).send(err.message || 'Internal server error.');
 });
 
-const port = process.env.PORT || 1337 //// this can be very useful if you deploy to Heroku!
+const port = process.env.PORT || 3000 //// this can be very useful if you deploy to Heroku!
 app.listen(port, function () {
     console.log(`your server is listening on ${port}`)
 });
