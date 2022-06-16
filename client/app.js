@@ -4,9 +4,10 @@ import {render} from 'react-dom';
 //import {Provider} from 'react-redux';
 
 //import {store} from './store';
-//import Routes from './components/Routes';
+import AppRoutes from './components/AppRoutes';
 
 
 render (
-    <h1>Good Evening!!</h1>, document.getElementById('app')
+    <AppRoutes/>, document.getElementById('app')
 )
+

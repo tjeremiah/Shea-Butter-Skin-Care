@@ -9,7 +9,9 @@ export class AllProducts extends React.Component {
     }
     render() {
       return (
-          <h1>This is a test</h1>
+          <h1>This is the Product Page</h1>
       )  
     }
 }
+
+export default AllProducts;
