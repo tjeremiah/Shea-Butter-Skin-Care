@@ -13,11 +13,11 @@ app.use(morgan('dev'));
 app.use(express.static(path.join(__dirname, '../public')));
 
 //middleware to parse requests from req-body
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 // //matches all routes to /api
-app.use('/api', require('./apiRoutes'));
+app.use('/api', require('./api'));
 
 app.get('/', (req, res) => {
     res.send(`
@@ -34,20 +34,20 @@ app.get('/', (req, res) => {
 
   
 //send index.html for any other request
-app.use('*', function (req, res) {
-    res.sendFile(path.join(__dirname, '../public'))
+app.get('*', (req, res)  => {
+    res.sendFile(path.join(__dirname, '../public/index.html'))
 });
 
 //error handling middleware
-app.use(function(err, req, res, next) {
+app.use((err, req, res, next) => {
     console.error(err);
     console.error(err.stack)
     res.status(err.status || 500).send(err.message || 'Internal server error.');
 });
 
-const port = process.env.PORT || 3000 //// this can be very useful if you deploy to Heroku!
-app.listen(port, function () {
-    console.log(`your server is listening on ${port}`)
-});
+// const port = process.env.PORT || 3000 //// this can be very useful if you deploy to Heroku!
+// app.listen(port, function () {
+//     console.log(`Torrel your server is listening on ${port}`)
+// });
 
 module.exports = app;

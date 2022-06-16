@@ -6,7 +6,7 @@
 const db = require('./server/db/database');
 const { green, red } = require ('chalk');
 
-const { Customer, Delivery, Order, Payment, Product, Transaction } = require('./server/db/models');
+const { Customer, Delivery, Order, Payment, Product, Transaction } = require('./server/db');
 
 const customerData = [
     {

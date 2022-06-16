@@ -1,13 +1,15 @@
 {
   "name": "shea-butter-skin-care",
   "version": "1.0.0",
+
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npm run start-server & npm run build-watch",
-    "start-server": "nodemon --watch server -e js,html server/index.js",
+    "start-dev": "npm run build-watch & npm run start-server",
+    "start-server": "nodemon --watch server main.js -e html,js,css",
     "build-watch": "webpack -w",
+    "start": "echo 'Running server for production - developers, use npm run start:dev for development' && node main",
     "seed": "node seed.js"
   },
   "repository": {
@@ -16,13 +18,14 @@
   },
   "author": "",
   "license": "ISC",
+  
   "bugs": {
     "url": "https://github.com/tjeremiah/Shea-Butter-Skin-Care/issues"
   },
   "homepage": "https://github.com/tjeremiah/Shea-Butter-Skin-Care#readme",
   "dependencies": {
-    "@babel/preset-env": "^7.16.11",
     "body-parser": "^1.19.2",
+    "chalk": "^5.0.1",
     "express": "^4.18.1",
     "morgan": "^1.10.0",
     "nodemon": "^2.0.15",
@@ -39,9 +42,14 @@
     "sequelize": "^6.18.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.17.8",
+    "@babel/core": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
+    "@babel/preset-react": "^7.12.10",
+    "babel-eslint": "^10.1.0",
     "babel-loader": "^8.2.4",
+    "babel-polyfill": "^6.26.0",
     "css-loader": "^6.7.1",
+    "eslint": "^7.19.0",
     "style-loader": "^3.3.1",
     "webpack": "^4.29.6",
     "webpack-cli": "^3.3.12"
