@@ -2,6 +2,7 @@ import React from 'react';
 import {connect } from 'react-redux';
 import {link } from 'react-router-dom';
 import Navbar from './Navbar'
+import fetchProducts from '../redux'
 
 
 export class AllProducts extends React.Component {
@@ -20,4 +21,16 @@ export class AllProducts extends React.Component {
     }
 }
 
-export default AllProducts;
+const mapState = (state) => {
+    return {
+        products: state.products,
+    }
+}
+
+const mapDispatch = () => {
+    return {
+        fetchCreditors: () => dispatchEvent(fetchCreditors()),
+    }
+}
+
+export default connect(mapState, mapDispatch)(AllProducts);
