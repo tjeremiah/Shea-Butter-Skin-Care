@@ -9,10 +9,10 @@ const Home = () => {
             <Navbar />
             
             
-        <div class="jumbotron jumbotron-fluid bg-info">
-            <div class="container" >
-                <h1 class="display-4 text-center font-weight-bold">Kindness SkinCare</h1>
-                <p class="lead text-center font-weight-bold">Clinically Kind For Sensitive Skin</p>
+        <div className="jumbotron jumbotron-fluid bg-info">
+            <div className="container" >
+                <h1 className="display-4 text-center font-weight-bold">Kindness SkinCare</h1>
+                <p className="lead text-center font-weight-bold">Clinically Kind For Sensitive Skin</p>
             </div>
         </div>
 
