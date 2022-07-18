@@ -4,7 +4,6 @@ import {link } from 'react-router-dom';
 import Navbar from './Navbar'
 import fetchProducts from '../redux/products'
 
-
 export class AllProducts extends React.Component {
     constructor(props) {
       super(props)
@@ -15,7 +14,7 @@ export class AllProducts extends React.Component {
     }
     
     render() {
-      console.log("AllProducts", this.props)  
+     console.log("AllProducts", this.props)  
       return (
        <div className="mt-2">
         <Navbar />

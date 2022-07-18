@@ -40,10 +40,6 @@ Order.belongsTo(Customer);
 // Transaction.belongsTo(Payment);
 
 
-
-
-
-
 module.exports = {
   // Include your models in this exports object as well!
   db,
